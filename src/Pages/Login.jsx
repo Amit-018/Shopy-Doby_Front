@@ -8,10 +8,12 @@ export default function LoginPage() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('http://localhost:5000/users/login', { email, password });
+      const res = await axios.post(`${backendURL}/users/login`, { email, password });
       localStorage.setItem('token', res.data.token);
       alert('Login successful');
       navigate('/');

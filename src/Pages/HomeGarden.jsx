@@ -8,9 +8,11 @@ const HomeAndGardenPage = () => {
     const [filterCategory, setFilterCategory] = useState('All');
     const [homeAndGardenItems, setHomeAndGardenItems] = useState([]);
     const { addToCart } = useCart(); // Extract addToCart from the cart context
+
+    const backendURL = process.env.REACT_APP_BACKEND_URL;
   
     useEffect(() => {
-      fetch('http://localhost:5000/api/home')
+      fetch(`${backendURL}/api/home`)
         .then(response => response.json())
         .then(data => setHomeAndGardenItems(data))
         .catch(error => console.error('Error fetching data:', error));

@@ -5,6 +5,8 @@ function Sale() {
   const [sortBy, setSortBy] = useState('discount');
   const [saleItems, setSaleItems] = useState([]);
 
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
+
   // Set the target time to 300 days, 52 minutes, and 45 seconds from now
   const targetTime = new Date().getTime() + (300 * 24 * 60 * 60 * 1000) + (52 * 60 * 1000) + (45 * 1000);
 
@@ -47,7 +49,7 @@ function Sale() {
 
   // Fetch sale items from the API
   useEffect(() => {
-    fetch('http://localhost:5000/api/sale')
+    fetch(`${backendURL}/api/sale`)
       .then((response) => response.json())
       .then((data) => setSaleItems(data))
       .catch((error) => console.error('Error fetching products:', error));

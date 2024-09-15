@@ -4,9 +4,12 @@ import { useCart } from '../CartContext'; // Import the useCart hook
 function Electronic() { 
     const [products, setProducts] = useState([]); 
     const { addToCart } = useCart(); // Extract addToCart from the cart context
+
+    const backendURL = process.env.REACT_APP_BACKEND_URL;
+
     useEffect(() => {
     // Replace this with your local server API endpoint
-    fetch('http://localhost:5000/api/products')
+    fetch(`${backendURL}/api/products`)
       .then((response) => response.json())
       .then((data) => setProducts(data))
       .catch((error) => console.error('Error fetching products:', error));

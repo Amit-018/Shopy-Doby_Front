@@ -7,11 +7,12 @@ function Sports() {
   const [sortBy, setSortBy] = useState('featured');
   const [filterCategory, setFilterCategory] = useState('All');
   const [sportsAndOutdoorItems, setSportsAndOutdoorItems] = useState([]);
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
 
   const { addToCart } = useCart(); // Extract addToCart from the cart context
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/sports')
+    fetch(`${backendURL}/api/sports`)
       .then(response => response.json())
       .then(data => setSportsAndOutdoorItems(data))
       .catch(error => console.error('Error fetching data:', error));

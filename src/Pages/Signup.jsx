@@ -6,11 +6,12 @@ const RegisterPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/users/register', { name, email, password });
+      await axios.post(`${backendURL}/users/register`, { name, email, password });
       alert('User registered successfully');
     } catch (err) {
       console.log(err);

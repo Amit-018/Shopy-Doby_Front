@@ -13,13 +13,16 @@ import person2 from "../assets/person2.jpg"
 import { useCart } from '../CartContext'; // Import the useCart hook
 
 
+
 function Home() {
   const [products ,setproducts] =useState([])
   const [items,setitems] =useState([])
 
+  const backendURL = process.env.REACT_APP_BACKEND_URL;
+
   useEffect(() => {
     // Replace this with your local server API endpoint
-    fetch('http://localhost:5000/api/products')
+    fetch(`${backendURL}/api/products`)
       .then((response) => response.json())
       .then((data) => setproducts(data))
       .catch((error) => console.error('Error fetching products:', error));
