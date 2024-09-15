@@ -7,7 +7,7 @@ function New() {
     const [sortBy, setSortBy] = useState('featured');
     const [filterCategory, setFilterCategory] = useState('All');
     const { addToCart } = useCart(); // Extract addToCart from the cart context
-    const backendURL = process.env.REACT_APP_BACKEND_URL;
+    const backendURL = import.meta.env.VITE_BACKEND_URL;
   
     // Fetch products from API
     useEffect(() => {

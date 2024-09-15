@@ -9,7 +9,7 @@ const HomeAndGardenPage = () => {
     const [homeAndGardenItems, setHomeAndGardenItems] = useState([]);
     const { addToCart } = useCart(); // Extract addToCart from the cart context
 
-    const backendURL = process.env.REACT_APP_BACKEND_URL;
+    const backendURL = import.meta.env.VITE_BACKEND_URL;
   
     useEffect(() => {
       fetch(`${backendURL}/api/home`)

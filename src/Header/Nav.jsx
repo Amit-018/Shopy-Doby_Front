@@ -11,6 +11,8 @@ function Nav() {
   const [name, setFullname] = useState('');
   const navigate = useNavigate();
   
+  const backendURL = import.meta.env.VITE_BACKEND_URL;
+
   // Function to toggle the user dropdown
   const toggleUserDropdown = () => {
     setIsUserDropdownOpen(!isUserDropdownOpen);
@@ -22,7 +24,7 @@ function Nav() {
       try {
         const token = localStorage.getItem('token');
         if (token) {
-          const res = await axios.get('http://localhost:5000/users/me', {
+          const res = await axios.get(`${backendURL}/users/me`, {
             headers: { 'Authorization': `Bearer ${token}` },
           });
           setFullname(res.data.name);
