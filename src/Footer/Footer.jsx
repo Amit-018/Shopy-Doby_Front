@@ -84,7 +84,7 @@ function Footer() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t text-center text-gray-600">
-            <p>&copy; 2023 Shopy-Doby. All rights reserved.</p>
+            <p>&copy; 2024 Shopy-Doby. All rights reserved.</p>
           </div>
         </div>
       </footer>
