@@ -52,16 +52,21 @@ function Nav() {
     <>
       <div className="bg-gray-50 flex flex-col">
         <header className="sticky top-0 z-10 bg-white border-b">
-          <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+        
+          <div className="container mx-auto px-1 py-3 flex items-center justify-between">
             {/* Logo Section */}
+            <NavLink to="/">
             <div className="flex items-center">
+            
             <img src={logo} style={{height:"40px", paddingLeft:"0px"}}/>
               <MenuIcon className="h-6 w-6 mr-2 md:hidden" />
               <h1 className="text-2xl font-bold text-blue-600">Shopy-Doby</h1>
+              
             </div>
+            </NavLink>
 
             {/* Navigation Links */}
-            <nav className="hidden md:flex space-x-4">
+            <nav className="hidden md:flex space-x-6 mr-7 font-semibold">
               <NavLink to="/" className="text-gray-600 hover:text-blue-600">Home</NavLink>
               <div className="relative group">
                 <button className="flex items-center text-gray-600 hover:text-blue-600">

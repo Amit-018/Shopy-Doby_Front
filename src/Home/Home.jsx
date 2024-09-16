@@ -28,7 +28,7 @@ function Home() {
   }, []);
   useEffect(() => {
     // Replace this with your local server API endpoint
-    fetch('http://localhost:5000/api/clothing')
+    fetch(`${backendURL}/api/clothing`)
       .then((response) => response.json())
       .then((data) => setitems(data))
       .catch((error) => console.error('Error fetching products:', error));
