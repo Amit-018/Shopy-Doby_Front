@@ -78,7 +78,7 @@ function Home() {
                 category === "Electronics"
                 ? "/Electronic"
                 : category === "Home & Garden"
-                ? "/home-garden"
+                ? "/home"
                 : category === "Clothing"
                 ? "/clothing"
                 : "/sports" // default case for Sports
